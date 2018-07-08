@@ -1,0 +1,39 @@
+
+@font-face {
+    font-family: "press-start-2pregular";
+    src: url("pressstart2p-regular-webfont.woff2") format("woff2"),
+         url("pressstart2p-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: "press-start-2pregular";
+  background-color: #FAFAFA;
+  color: #222222;
+}
+
+header {
+  text-align: center;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  position: absolute; 
+}
+
+.img-background {
+  max-height: 600px;
+  max-width: 800px;
+  z-index: 1;
+}
+
+.img-foreground {
+  max-width: 800px;
+  z-index: 4;
+}
+
