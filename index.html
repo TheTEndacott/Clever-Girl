@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
@@ -13,14 +14,46 @@
       <h1>Clever Girl</h1>
     </header>
 
-    <div class="game">
-      <img class="img-background" src="images/jungle-background-sm.png" alt="">
-      <img class="img-foreground" src="images/jungle-background-sm-lower.png" alt="">
-      <img class="icon-jeff" src="images/jeffgoldblum-sm.png" alt="">
-      <img class="icon-raptor" src="images/raptorfull-sm-l.png" alt="">
+    <section id="game">
+      <div class="container game-container">
+        <div class="row">
+          <div class="col-md-12 game-col">
+            <img class="img-background" src="images/jungle-background-sm.png" alt="">
+            <img class="img-foreground" src="images/jungle-background-sm-lower.png" alt="">
+            <img class="icon-jeff" src="images/jeffgoldblum-sm.png" alt="">
+            <img class="icon-raptor" src="images/raptorfull-sm-l.png" alt="">
+            <p class="score">Score: </p>
+            <p class="time">Time: <span class="counter"></span> </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="fixed-bottom">
+      <p>Instructions: You have 30 seconds. <br> Shoot the raptors to gain points. <br> Don't shoot Jeff or you will lose points (obviously, it's Jeff).</p>
     </div>
 
-    <footer></footer>
-  </body>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
 </html>
