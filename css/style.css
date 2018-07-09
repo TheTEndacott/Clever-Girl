@@ -7,46 +7,30 @@
     font-style: normal;
 }
 
+html {
+  cursor: crosshair;
+}
+
 body {
   font-family: "press-start-2pregular";
   background-color: #FAFAFA;
   color: #222222;
-  /* cursor: url(../images/reticle.png), auto; */
-}
-
-header {
-  text-align: center;
-}
-
-.game-col {
-  position: relative;
-}
-
-.img-background {
-  position: absolute;
-  max-height: 600px;
-  width: 100%;
-  z-index: -1;
-}
-
-.img-foreground {
-  position: absolute;
-  max-height: 600px;
-  width: 100%;
-  z-index: 5;
+  background-image: url("../images/jungle-background.jpg");
+  background-size: cover;
+  background-color: forestgreen;
 }
 
 .score {
   color: #FCC327;
   position: absolute;
-  top: 5%;
+  top: 2%;
   left: 25%;
 }
 
 .time {
   color: #FCC327;
   position: absolute;
-  top: 5%;
+  top: 2%;
   right: 25%;
 }
 
