@@ -24,7 +24,6 @@ $(function() {
   }, 2000);
 
 
-
   // Random images to appear
   var imageArray = ["dino1"];
 
@@ -56,13 +55,14 @@ $(function() {
       }, 2000);
   }
 
+
   // Delay function for showChar
   setInterval(function(){
     showChar();
   }, 3000);
 
 
-
+  
 
 
 
