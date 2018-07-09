@@ -13,25 +13,25 @@ $(function() {
     }
   };
 
-  var imgsArray = ["raptor", "jeff"];
-
-  function generateRandomForArray() {
-      var num = Math.floor(Math.random() * 8);
-      return num;
-  }
-
-  function generateRandom() {
-      var num = Math.floor(Math.random() * 400);
-      return num;
-  }
-
-  function showLetter() {
-      var letter = imgsArray[generateRandomForArray()];
-      $("div").append("<img src='imgs/" + letter + ".png'>");
-      var left = generateRandom();
-      var top = generateRandom();
-      $("div").last().css({"top": top + "px", "left": left + "px"});
-  }
+  // var imgsArray = ["raptor", "jeff"];
+  //
+  // function generateRandomForArray() {
+  //     var num = Math.floor(Math.random() * 8);
+  //     return num;
+  // }
+  //
+  // function generateRandom() {
+  //     var num = Math.floor(Math.random() * 400);
+  //     return num;
+  // }
+  //
+  // function showLetter() {
+  //     var letter = imgsArray[generateRandomForArray()];
+  //     $("div").append("<img src='imgs/" + letter + ".png'>");
+  //     var left = generateRandom();
+  //     var top = generateRandom();
+  //     $("div").last().css({"top": top + "px", "left": left + "px"});
+  // }
 
 
 
