@@ -2,9 +2,10 @@ $(function() {
 
   console.log("Hello Jurassic World!");
 
-  setTimeout(function(){
-    showChar();
-  }, 5000);
+  // Delayed start to show character
+  // setTimeout(function(){
+  //   showChar();
+  // }, 5000);
 
   // Countdown Timer
   setTimeout(function() {
@@ -20,7 +21,7 @@ $(function() {
         console.log(timeLeft);
       }
     };
-  }, 4000);
+  }, 2000);
 
 
 
@@ -48,8 +49,17 @@ $(function() {
       var left = generateRandomLeft();
       var top = generateRandomTop();
       $(".random-image").last().css({"position":"absolute","top": top + "px", "left": left + "px"});
+      console.log("Raptor");
+
+      setTimeout(function(){
+        $(".random-image img:last-child").remove();
+      }, 2000);
   }
 
+  // Delay function for showChar
+  setInterval(function(){
+    showChar();
+  }, 3000);
 
 
 
