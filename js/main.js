@@ -1,15 +1,17 @@
 $(function() {
   console.log("Hello world!");
 
-  var timeleft = 30;
-  var downloadTimer = setInterval(function(){
-  timeleft--;
-  document.getElementsByClass("time").textContent = "Time: " + timeleft;
-  if(timeleft <= 0)
-      clearInterval(downloadTimer);
-  },1000);
+  var timeLeft = 30;
+  var timerId = setInterval(countdown, 1000);
 
-
+  function countdown() {
+    if (timeLeft == 0) {
+      $(".time").html("TIME'S UP!")
+    } else {
+      $(".timeCounter").html(timeLeft);
+      timeLeft--;
+    }
+  };
 
 
 
