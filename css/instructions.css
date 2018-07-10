@@ -9,7 +9,7 @@
 
 body {
   font-family: "press-start-2pregular", cursive;
-  background-color: rgb(34, 139, 34, 0.8); /* forestgreen */
+  background-color: rgb(34, 139, 34, 0.85); /* forestgreen with opacity */
   color: #FDC426;
   margin-top: 50px;
 }

@@ -1,10 +1,7 @@
 $(function() {
 
-
-  console.log("Hello Jurassic World!");
-
   var playerScore = 0;
-  var timeLeft = 30; // -------------------------------------------------------- Set to 30 -------------------------------------------------
+  var timeLeft = 30;
   var imageArray = ["dino1"];
   var modal = $("#myModal")[0];
 
@@ -24,13 +21,12 @@ $(function() {
     } else {
       $(".timeCounter").html(timeLeft);
       timeLeft--;
-      console.log(timeLeft);
     }
   };
 
   // Random images to appear ----------
   function randomImage() {
-      var num = Math.floor(Math.random() * 1);
+      var num = Math.floor(Math.random() * 1); // Change final value according to images in imageArray
       return num;
   }
 
@@ -44,14 +40,12 @@ $(function() {
       return num;
   }
 
-  var char = imageArray[randomImage()];
-
   function spawnChar() {
-      $(".random-image").append("<img src='images/" + char + ".png'>");
-      var left = randomLeft();
-      var top = randomTop();
-      $(".random-image").last().css({"position":"absolute","top": top + "px", "left": left + "px"});
-      console.log("sprite");
+    var char = imageArray[randomImage()];
+    $(".random-image").append("<img src='images/" + char + ".png'>");
+    var left = randomLeft();
+    var top = randomTop();
+    $(".random-image").last().css({"position":"absolute","top": top + "px", "left": left + "px"});
   }
 
 
@@ -79,25 +73,7 @@ $(function() {
   $(".random-image").click(function(){
     newScore = playerScore++;
     $(".scoreCounter").html(newScore);
-    console.log("SCORE");
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
