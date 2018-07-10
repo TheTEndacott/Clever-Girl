@@ -9,14 +9,31 @@
 
 body {
   font-family: "press-start-2pregular", cursive;
-  background-color: forestgreen;
-  color: #FCC327;
+  background-color: rgb(34, 139, 34, 0.8); /* forestgreen */
+  color: #FDC426;
 }
 
-h1, h2, p {
+h1, h3, p {
   font-family: "press-start-2pregular", cursive;
 }
 
 h1 {
-  color: red;
+  color: #FDC426;
+  text-shadow: 2px 2px red;
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 50px;
+}
+
+.play-button {
+  text-align: center;
+  margin-top: 50px;
+}
+
+button {
+  color: right;
+  border: solid 2px #FDC426;
+  border-radius: 5px;
+  width: 500px;
+  height: 100px;
 }

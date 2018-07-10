@@ -20,10 +20,11 @@ body {
   background-color: forestgreen;
   overflow-x: hidden;
   overflow-y: hidden;
+  user-select: none;
 }
 
 .score, .time {
-  color: #FCC327;
+  color: #FDC426;
   position: absolute;
   top: 2%;
   font-size: 1.2rem;
@@ -41,6 +42,10 @@ body {
   position: absolute;
   width: 360px;
   height: 159px;
+}
+
+img {
+  -webkit-user-drag: none;
 }
 
 
