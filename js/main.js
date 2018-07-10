@@ -2,10 +2,12 @@ $(function() {
 
   console.log("Hello Jurassic World!");
 
+  var playerScore = 0;
+
   // Countdown Timer
   setTimeout(function() {
     var timeLeft = 30;
-    var timerTime = setInterval(countdown, 1000);
+    setInterval(countdown, 1000);
 
     function countdown() {
       if (timeLeft == 0) {
@@ -56,9 +58,12 @@ $(function() {
     showChar();
   }, 2000); // Enemy displayed for 2s but cleared by timeout after 1s
 
-  $('.random-image').click(function(){
+  // Click event for
+  $(".random-image").click(function(){
+    newScore = playerScore++;
+    $(".scoreCounter").html(newScore);
     console.log("SCORE");
-});
+  });
 
 
 
