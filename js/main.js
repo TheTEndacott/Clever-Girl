@@ -2,11 +2,6 @@ $(function() {
 
   console.log("Hello Jurassic World!");
 
-  // Delayed start to show character
-  // setTimeout(function(){
-  //   showChar();
-  // }, 5000);
-
   // Countdown Timer
   setTimeout(function() {
     var timeLeft = 30;
@@ -52,17 +47,19 @@ $(function() {
 
       setTimeout(function(){
         $(".random-image img:last-child").remove();
-      }, 2000);
+      }, 1000); // Enemy cleared after 1s
   }
 
 
   // Delay function for showChar
   setInterval(function(){
     showChar();
-  }, 3000);
+  }, 2000); // Enemy displayed for 2s but cleared by timeout after 1s
 
+  $('.random-image').click(function(){
+    console.log("SCORE");
+});
 
-  
 
 
 
