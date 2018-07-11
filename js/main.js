@@ -1,8 +1,8 @@
 $(function() {
 
   var playerScore = 0;
-  var timeLeft = 4;
-  var imageArray = ["dino1"];
+  var timeLeft = 30;
+  var imageArray = ["dino1", "human1"];
   var modal = $("#myModal")[0];
 
   // Countdown Timer ----------
@@ -27,24 +27,26 @@ $(function() {
 
   // Random images to appear ----------
   function randomImage() {
-      var num = Math.floor(Math.random() * 1); // Change final value according to images in imageArray
+      var num = Math.floor(Math.random() * 2); // Change final value according to images in imageArray
       return num;
   }
 
+  var divsize = ((Math.random()*100) + 50).toFixed();
+
   function randomLeft() {
-      var num = Math.floor(Math.random() * 1250);
+      var num = Math.floor(Math.random() * ($(document).width() - divsize)).toFixed();
       return num;
   }
 
   function randomTop() {
-      var num = Math.floor(Math.random() * 640);
+      var num = Math.floor(Math.random() * ($(document).height() - divsize)).toFixed();
       return num;
   }
 
   function spawnChar() {
     $(".random-image img").remove();
 
-    var char = imageArray[randomImage()];
+    char = imageArray[randomImage()];
     $(".random-image").append("<img src='images/" + char + ".png'>");
     var left = randomLeft();
     var top = randomTop();
@@ -52,31 +54,51 @@ $(function() {
   }
 
 
-  // var + function + clearInterval to remove the enemy and function to call when timer expires
-  // var enemyRemoveInterval = setInterval(stopChar, 1000);
-  //
-  // function stopChar() {
-  //   $(".random-image img:last-child").remove();
-  // }
-  //
-  // function stopEnemyRemove() {
-  //   clearInterval(enemyRemoveInterval);
-  //   $(".random-image img:last-child").remove();
-  // }
-
-
   // Delay function + clearInterval for spawnChar ----------
-  var spawnCharInterval = setInterval(spawnChar, 2000); // Enemy displayed for 2s but cleared by timeout after 1s
+  var spawnCharInterval = setInterval(spawnChar, 1250); // Enemy displayed for number
 
   function stopSpawnChar() {
     clearInterval(spawnCharInterval);
   }
 
   // Click event for enemy and update score counter ----------
+  // $(".random-image").click(function(){
+  //   newScore = playerScore++;
+  //   $(".scoreCounter").html(newScore);
+  // });
+
   $(".random-image").click(function(){
-    newScore = playerScore++;
-    $(".scoreCounter").html(newScore);
+    if (char == "human1") {
+      newScore = playerScore--;
+      $(".scoreCounter").html(newScore);
+      console.log("HUMAN LOSE POINT");
+    } else if (char == "dino1") {
+      newScore = playerScore++;
+      $(".scoreCounter").html(newScore);
+      console.log("DINO WIN POINT");
+    }
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

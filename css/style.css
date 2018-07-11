@@ -29,6 +29,12 @@ h2 {
   margin-top: 100px;
 }
 
+#game-area {
+  width: 90vw;
+  height: 90vh;
+  margin: 5vh 5vw;
+}
+
 .score, .time {
   color: #FDC426;
   position: absolute;

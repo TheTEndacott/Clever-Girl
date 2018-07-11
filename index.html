@@ -3,44 +3,40 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/instructions.css">
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <title>Clever Girl</title>
   </head>
 
   <body>
-    <audio autoplay>
-      <source src="audio/shoother.mp3" type="audio/mp3">
-      <source src="audio/shoother.mp4" type="audio/mp4">
-      <source src="audio/shoother.ogg" type="audio/ogg">
-      <source src="audio/shoother.aac" type="audio/aac">
-    </audio>
-
-    <div id="game-area">
-      <p class="score">Score: <span class="scoreCounter">0</span> </p>
-      <p class="time">Time: <span class="timeCounter">--</span> </p>
-
-      <div class="random-image"></div>
-    </div>
-
-    <div id="myModal" class="modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title">Thank you, Ranger!</h3>
-          </div>
-          <div class="modal-body">
-            <p class="modal-score">Your score was </p>
-          </div>
-          <a href="index.html"> <button type="button" class="btn btn-default" data-dismiss="modal">Replay</button> </a>
-          <br>
-          <a href="instructions.html"> <button type="button" class="btn btn-default" data-dismiss="modal">Home</button> </a>
-          <br>
+    <div class="container header">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Clever Girl</h1>
         </div>
       </div>
     </div>
 
+    <div class="container inst">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Instructions</h3>
+        </div>
+
+        <div class="col-md-7 offset-md-1">
+          <p>You have 30 seconds.</p>
+          <p>Shoot the raptors to gain points.</p>
+          <p>The game will begin 2 seconds after clicking play.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 play-button">
+          <a href="game.html"> <button type="button" name="button">Click here to play</button> </a>
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>
