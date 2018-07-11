@@ -1,0 +1,63 @@
+
+@font-face {
+    font-family: "press-start-2pregular";
+    src: url("pressstart2p-regular-webfont.woff2") format("woff2"),
+         url("pressstart2p-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+  cursor: crosshair;
+}
+
+body {
+  font-family: "press-start-2pregular";
+  background-color: #FAFAFA;
+  color: #222222;
+  background-image: url("../images/jungle-background.jpg");
+  background-size: cover;
+  background-color: forestgreen;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  user-select: none;
+}
+
+h2 {
+  color: #FDC426;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.score, .time {
+  color: #FDC426;
+  position: absolute;
+  top: 2%;
+  font-size: 1.2rem;
+}
+
+.score {
+  left: 25%;
+}
+
+.time {
+  right: 25%;
+}
+
+.random-image {
+  position: absolute;
+  width: 360px;
+  height: 159px;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+#myModal {
+  display: hidden;
+  text-align: center;
+  margin-top: 200px;
+}
+
+
