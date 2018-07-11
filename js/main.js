@@ -1,7 +1,7 @@
 $(function() {
 
   var playerScore = 0;
-  var timeLeft = 30;
+  var timeLeft = 4;
   var imageArray = ["dino1"];
   var modal = $("#myModal")[0];
 
@@ -13,11 +13,12 @@ $(function() {
   function countdown() {
     if (timeLeft == 0) {
       $(".time").html("TIME'S UP!");
-      stopEnemyRemove();
-      stopSpawnChar();
-      timeLeft = null;
-      $(".modal-score").append(playerScore-1);
+      $(".modal-score").append(playerScore);
       $(modal).css("display", "block");
+      timeLeft = null;
+      // stopEnemyRemove();
+      return stopSpawnChar();
+      return spawnChar();
     } else {
       $(".timeCounter").html(timeLeft);
       timeLeft--;
@@ -41,6 +42,8 @@ $(function() {
   }
 
   function spawnChar() {
+    $(".random-image img").remove();
+
     var char = imageArray[randomImage()];
     $(".random-image").append("<img src='images/" + char + ".png'>");
     var left = randomLeft();
@@ -50,23 +53,23 @@ $(function() {
 
 
   // var + function + clearInterval to remove the enemy and function to call when timer expires
-  var enemyRemoveInterval = setInterval(stopChar, 1000);
-
-  function stopChar() {
-    $(".random-image img:last-child").remove();
-  }
-
-  function stopEnemyRemove() {
-    clearInterval(enemyRemoveInterval);
-    $(".random-image img:last-child").remove();
-  }
+  // var enemyRemoveInterval = setInterval(stopChar, 1000);
+  //
+  // function stopChar() {
+  //   $(".random-image img:last-child").remove();
+  // }
+  //
+  // function stopEnemyRemove() {
+  //   clearInterval(enemyRemoveInterval);
+  //   $(".random-image img:last-child").remove();
+  // }
 
 
   // Delay function + clearInterval for spawnChar ----------
-  var spawnCharinterval = setInterval(spawnChar, 2000); // Enemy displayed for 2s but cleared by timeout after 1s
+  var spawnCharInterval = setInterval(spawnChar, 2000); // Enemy displayed for 2s but cleared by timeout after 1s
 
   function stopSpawnChar() {
-    clearInterval(spawnCharinterval);
+    clearInterval(spawnCharInterval);
   }
 
   // Click event for enemy and update score counter ----------
