@@ -1,9 +1,10 @@
 $(function() {
 
   var playerScore = 0;
-  var timeLeft = 30;
+  var timeLeft = 10;
   var imageArray = ["dino1", "human1"];
   var modal = $("#myModal")[0];
+
 
   // Countdown Timer ----------
   setTimeout(function() {
@@ -25,6 +26,7 @@ $(function() {
     }
   };
 
+
   // Random images to appear ----------
   function randomImage() {
       var num = Math.floor(Math.random() * 2); // Change final value according to images in imageArray
@@ -44,13 +46,13 @@ $(function() {
   }
 
   function spawnChar() {
-    $(".random-image img").remove();
+    $("#random-image img").remove();
 
     char = imageArray[randomImage()];
-    $(".random-image").append("<img src='images/" + char + ".png'>");
+    $("#random-image").append("<img src='images/" + char + ".png'>");
     var left = randomLeft();
     var top = randomTop();
-    $(".random-image").last().css({"position":"absolute","top": top + "px", "left": left + "px"});
+    $("#random-image").last().css({"position":"absolute","top": top + "px", "left": left + "px"});
   }
 
 
@@ -61,28 +63,27 @@ $(function() {
     clearInterval(spawnCharInterval);
   }
 
+
   // Click event for enemy and update score counter ----------
-  // $(".random-image").click(function(){
+  // $("#random-image").click(function(){
   //   newScore = playerScore++;
   //   $(".scoreCounter").html(newScore);
   // });
 
-  $(".random-image").click(function(){
+  $("#random-image").click(function(){
     if (char == "human1") {
-      newScore = playerScore--;
+      newScore = --playerScore;
       $(".scoreCounter").html(newScore);
       console.log("HUMAN LOSE POINT");
     } else if (char == "dino1") {
-      newScore = playerScore++;
+      newScore = ++playerScore;
       $(".scoreCounter").html(newScore);
       console.log("DINO WIN POINT");
     }
   });
 
 
-
-
-
+  
 
 
 
