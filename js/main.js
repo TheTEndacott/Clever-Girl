@@ -1,8 +1,8 @@
 $(function() {
 
   var playerScore = 0;
-  var timeLeft = 10;
-  var imageArray = ["dino1", "human1"];
+  var timeLeft = 30;
+  var imageArray = ["dino1", "dino1", "human1", "human2"];
   var modal = $("#myModal")[0];
 
 
@@ -17,9 +17,9 @@ $(function() {
       $(".modal-score").append(playerScore);
       $(modal).css("display", "block");
       timeLeft = null;
-      // stopEnemyRemove();
       return stopSpawnChar();
       return spawnChar();
+      return shootNormal();
     } else {
       $(".timeCounter").html(timeLeft);
       timeLeft--;
@@ -29,19 +29,19 @@ $(function() {
 
   // Random images to appear ----------
   function randomImage() {
-      var num = Math.floor(Math.random() * 2); // Change final value according to images in imageArray
+      var num = Math.floor(Math.random() * 4); // Change final value according to images in imageArray
       return num;
   }
 
-  var divsize = ((Math.random()*100) + 50).toFixed();
+  var divsize = ((Math.random()*100) + 50);
 
   function randomLeft() {
-      var num = Math.floor(Math.random() * ($(document).width() - divsize)).toFixed();
+      var num = Math.floor(Math.random() * ($("#game-area").width() - divsize));
       return num;
   }
 
   function randomTop() {
-      var num = Math.floor(Math.random() * ($(document).height() - divsize)).toFixed();
+      var num = Math.floor(Math.random() * ($("#game-area").height() - divsize));
       return num;
   }
 
@@ -56,21 +56,21 @@ $(function() {
   }
 
 
-  var spawnBossInterval = setTimeout(spawnBoss, 5000);
+  // Ground boss dinosaur to appear at set time into game and remove after 1sec ----------
+  var spawnBossInterval = setTimeout(spawnBoss, 22000);
 
   function spawnBoss() {
-    $("#boss").append("<img src='images/dino7-sm.png'>");
+    $("#boss").append("<img src='images/dino9.png'>");
     var left = randomLeft();
     var top = randomTop();
     $("#boss").last().css({"position":"absolute","top": top + "px", "left": left + "px"});
   }
 
-  var removeBoss = setTimeout(stopSpawnBoss, 6000); // Enemy displayed for number
+  var removeBoss = setTimeout(stopSpawnBoss, 23000); // Enemy displayed for number
 
   function stopSpawnBoss() {
     $("#boss img").remove();
   }
-
 
 
   // Delay function + clearInterval for spawnChar ----------
@@ -82,7 +82,9 @@ $(function() {
 
 
   // Click event for enemy and update score counter ----------
-  $("#random-image").click(function(){
+  $("#random-image").on("click", shootNormal);
+
+  function shootNormal(){
     if (char == "human1") {
       newScore = --playerScore;
       $(".scoreCounter").html(newScore);
@@ -92,14 +94,16 @@ $(function() {
       $(".scoreCounter").html(newScore);
       console.log("DINO WIN POINT");
     }
-  });
+  }
 
   // Click event for boss enemy and update score counter ----------
-  $("#boss").click(function(){
+  $("#boss").on("click", shootBossGround);
+
+  function shootBossGround(){
     newScore = 5+playerScore;
     $(".scoreCounter").html(newScore);
     console.log("BOSS POINTS");
-  });
+  }
 
 
 
