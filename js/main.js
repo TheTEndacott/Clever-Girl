@@ -56,6 +56,23 @@ $(function() {
   }
 
 
+  var spawnBossInterval = setTimeout(spawnBoss, 5000);
+
+  function spawnBoss() {
+    $("#boss").append("<img src='images/dino7-sm.png'>");
+    var left = randomLeft();
+    var top = randomTop();
+    $("#boss").last().css({"position":"absolute","top": top + "px", "left": left + "px"});
+  }
+
+  var removeBoss = setTimeout(stopSpawnBoss, 6000); // Enemy displayed for number
+
+  function stopSpawnBoss() {
+    $("#boss img").remove();
+  }
+
+
+
   // Delay function + clearInterval for spawnChar ----------
   var spawnCharInterval = setInterval(spawnChar, 1250); // Enemy displayed for number
 
@@ -65,11 +82,6 @@ $(function() {
 
 
   // Click event for enemy and update score counter ----------
-  // $("#random-image").click(function(){
-  //   newScore = playerScore++;
-  //   $(".scoreCounter").html(newScore);
-  // });
-
   $("#random-image").click(function(){
     if (char == "human1") {
       newScore = --playerScore;
@@ -82,8 +94,15 @@ $(function() {
     }
   });
 
+  // Click event for boss enemy and update score counter ----------
+  $("#boss").click(function(){
+    newScore = 5+playerScore;
+    $(".scoreCounter").html(newScore);
+    console.log("BOSS POINTS");
+  });
 
-  
+
+
 
 
 
