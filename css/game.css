@@ -52,11 +52,12 @@ h2 {
 
 .random-image {
   position: absolute;
+  z-index: 5;
 }
 
 .bossG, .bossF {
   position: absolute;
-  z-index: 99;
+  z-index: 9;
 }
 
 img {
@@ -69,4 +70,14 @@ img {
   margin-top: 200px;
 }
 
+.modal-content {
+  background-color: rgb(34, 139, 34, 0.85); /* forestgreen with opacity */
+  color: #FDC426;
+}
 
+button {
+  color: red;
+  background-color: #222222;
+  width: 175px;
+  height: 50px;
+}

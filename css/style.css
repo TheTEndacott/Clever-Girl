@@ -49,12 +49,12 @@ h1 {
   opacity: 0;
   animation-name: claw;
   animation-delay: 1500ms;
-  animation-duration: 4000ms;
+  animation-duration: 3000ms;
   animation-fill-mode: both;
 }
 
 .instructions {
-  margin-top: 200px;
+  margin-top: 175px;
 }
 
 .play-button {
