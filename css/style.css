@@ -50,7 +50,7 @@ h2 {
   right: 25%;
 }
 
-.random-image {
+.random-image, .bossG, .bossF {
   position: absolute;
 }
 
