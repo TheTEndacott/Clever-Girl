@@ -7,61 +7,67 @@
     font-style: normal;
 }
 
-html {
-  cursor: crosshair;
-}
-
 body {
-  font-family: "press-start-2pregular";
-  background-color: #FAFAFA;
-  color: #222222;
-  background-image: url("../images/jungle-background.jpg");
-  background-size: cover;
-  background-color: forestgreen;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  user-select: none;
+  font-family: "press-start-2pregular", cursive;
+  background-color: rgb(34, 139, 34, 0.85); /* forestgreen with opacity */
+  color: #FDC426;
+  margin-top: 80px;
 }
 
-h2 {
-  color: #FDC426;
+h1, h3, p {
+  font-family: "press-start-2pregular", cursive;
+}
+
+.title {
   text-align: center;
-  margin-top: 100px;
+  position: relative;
+
 }
 
-#game-area {
-  width: 90vw;
-  height: 90vh;
-  margin: 5vh 5vw;
-}
-
-.score, .time {
+h1 {
   color: #FDC426;
-  position: absolute;
-  top: 2%;
-  font-size: 1.2rem;
-}
-
-.score {
-  left: 25%;
-}
-
-.time {
-  right: 25%;
-}
-
-.random-image, .bossG, .bossF {
+  text-shadow: 2px 2px red;
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 50px;
+  left: 10%;
   position: absolute;
 }
 
-img {
-  -webkit-user-drag: none;
+@keyframes claw {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
-#myModal {
-  display: hidden;
-  text-align: center;
+.scratch {
+  position: absolute;
+  z-index: 1;
+  height: 200px;
+  transform: rotate(-90deg);
+  top: -50px;
+  left: 51%;
+  opacity: 0;
+  animation-name: claw;
+  animation-delay: 1500ms;
+  animation-duration: 4000ms;
+  animation-fill-mode: both;
+}
+
+.instructions {
   margin-top: 200px;
 }
 
+.play-button {
+  text-align: center;
+  margin-top: 50px;
+}
 
+button {
+  color: red;
+  background-color: #222222;
+  border: solid 2px #FDC426;
+  border-radius: 5px;
+  width: 500px;
+  height: 100px;
+  cursor: crosshair;
+}

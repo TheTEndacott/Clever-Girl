@@ -4,8 +4,9 @@ $(function() {
   var timeLeft = 30;
   var imageArray = ["dino1", "dino1", "human1", "human2"];
   var modal = $("#myModal")[0];
-  var startAudio = new Audio("audio/shoother.mp3");
-  var finishAudio = new Audio("audio/clevergirl.mp3");
+  var finishHighAudio = new Audio("audio/there.mp3");
+  var finishLowAudio = new Audio("audio/chaos.mp3");
+  var middleAudio = new Audio("audio/clever.mp3");
 
 
   // Countdown Timer ----------
@@ -15,14 +16,25 @@ $(function() {
 
   function countdown() {
     if (timeLeft == 0) {
-      $(".time").html("TIME'S UP!");
-      $(".modal-score").append(playerScore);
-      $(modal).css("display", "block");
-      finishAudio.play();
-      timeLeft = null;
-      return stopSpawnChar();
-      return spawnChar();
-      return shootNormal();
+      if (playerScore > 15) {
+        $(".time").html("TIME'S UP!");
+        $(".modal-score").append(playerScore);
+        $(modal).css("display", "block");
+        finishHighAudio.play();
+        timeLeft = null;
+        return stopSpawnChar();
+        return spawnChar();
+        return shootNormal();
+      } else {
+        $(".time").html("TIME'S UP!");
+        $(".modal-score").append(playerScore);
+        $(modal).css("display", "block");
+        finishLowAudio.play();
+        timeLeft = null;
+        return stopSpawnChar();
+        return spawnChar();
+        return shootNormal();
+      }
     } else {
       $(".timeCounter").html(timeLeft);
       timeLeft--;
@@ -60,7 +72,7 @@ $(function() {
 
 
   // Delay function + clearInterval for spawnChar ----------
-  var spawnCharInterval = setInterval(spawnChar, 1250); // Enemy displayed for number
+  var spawnCharInterval = setInterval(spawnChar, 1500); // Enemy displayed for number
 
   function stopSpawnChar() {
     clearInterval(spawnCharInterval);
@@ -124,11 +136,9 @@ $(function() {
     $(".scoreCounter").html(newScore);
   }
 
-  startAudio.play();
-
-
-
-
+  setTimeout(function(){
+    middleAudio.play();
+  }, 28000);
 
 
 
