@@ -3,7 +3,6 @@ $(function() {
   var playerScore = 0;
   var timeLeft = 30;
   var imageArray = ["dino1", "dino1", "human1", "human2"];
-  var modal = $("#myModal")[0];
   var finishHighAudio = new Audio("audio/there.mp3");
   var finishLowAudio = new Audio("audio/chaos.mp3");
   var middleAudio = new Audio("audio/clever.mp3");
@@ -16,25 +15,25 @@ $(function() {
 
   function countdown() {
     if (timeLeft == 0) {
-      if (playerScore > 15) {
-        $(".time").html("TIME'S UP!");
-        $(".modal-score").append(playerScore);
-        $(modal).css("display", "block");
-        finishHighAudio.play();
-        timeLeft = null;
-        return stopSpawnChar();
-        return spawnChar();
-        return shootNormal();
-      } else {
-        $(".time").html("TIME'S UP!");
-        $(".modal-score").append(playerScore);
-        $(modal).css("display", "block");
-        finishLowAudio.play();
-        timeLeft = null;
-        return stopSpawnChar();
-        return spawnChar();
-        return shootNormal();
-      }
+        if (playerScore > 15) {
+          $(".time").html("TIME'S UP!");
+          $(".modal-score").append(playerScore);
+          $("#myModal").css("display", "block");
+          finishHighAudio.play();
+          timeLeft = null;
+          return stopSpawnChar();
+          return spawnChar();
+          return shootNormal();
+        } else {
+          $(".time").html("TIME'S UP!");
+          $(".modal-score").append(playerScore);
+          $("#myModal").css("display", "block");
+          finishLowAudio.play();
+          timeLeft = null;
+          return stopSpawnChar();
+          return spawnChar();
+          return shootNormal();
+        }
     } else {
       $(".timeCounter").html(timeLeft);
       timeLeft--;
@@ -48,15 +47,15 @@ $(function() {
       return num;
   }
 
-  var divsize = ((Math.random()*100) + 50);
+  var buffer = ((Math.random()*100) + 50);
 
   function randomLeft() {
-      var num = Math.floor(Math.random() * ($("#game-area").width() - divsize));
+      var num = Math.floor(Math.random() * ($("#game-area").width() - buffer));
       return num;
   }
 
   function randomTop() {
-      var num = Math.floor(Math.random() * ($("#game-area").height() - divsize));
+      var num = Math.floor(Math.random() * ($("#game-area").height() - buffer));
       return num;
   }
 
@@ -72,7 +71,7 @@ $(function() {
 
 
   // Delay function + clearInterval for spawnChar ----------
-  var spawnCharInterval = setInterval(spawnChar, 1500); // Enemy displayed for number
+  var spawnCharInterval = setInterval(spawnChar, 2000); // Enemy displayed for number
 
   function stopSpawnChar() {
     clearInterval(spawnCharInterval);
@@ -101,7 +100,7 @@ $(function() {
 
   function spawnBossF() {
     $("#bossF").append("<img src='images/dino8.png'>");
-    $("#bossF").animate({marginLeft: "1475px"}, 5000, function(){
+    $("#bossF").animate({marginLeft: "1475px"}, 5000, function(){ // Animation (spawn) lasts for number
       $("#bossF img").remove();
     });
   }
